@@ -31,6 +31,12 @@
   ======================================================== -->
 </head>
 
+<!-- VIDEO MODAL -->
+<div id="video-modal" class="video-modal">
+  <video id="modal-video" controls></video>
+  <span class="close-video">&times;</span>
+</div>
+
 <body>
   <!-- ======= Header ======= -->
   <header id="header" class="fixed-top">
@@ -45,6 +51,7 @@
       <nav id="navbar" class="navbar">
         <ul>
           <li><a class="nav-link scrollto active" href="#hero">Home</a></li>
+          <li><a class="nav-link scrollto" href="#PG">Published Games</a></li>
           <li><a class="nav-link scrollto" href="#work">Portfolio</a></li>
           <li><a class="nav-link scrollto" href="#udemy">Udemy Courses</a></li>
           <li><a class="nav-link scrollto" href="#about">About</a></li>
@@ -66,10 +73,10 @@
           <!--<p class="display-6 color-d">Hello, world!</p>-->
           <h1 class="hero-title mb-4">I am KPS CHAUHAN</h1>
           <p class="hero-subtitle">
-            <span class="typed" data-typed-items="Game Developer, Game Developer, Game Developer"></span>
+            <span class="typed" data-typed-items="Unreal Engine Game Developer, Unreal Engine Game Developer, Unreal Engine Game Developer"></span>
           </p>
           <!-- <p class="pt-3"><a class="btn btn-primary btn js-scroll px-4" href="#about" role="button">Learn More</a></p> -->
-          <a href="./assets/Cv/KPS Chauhan (Resume).pdf" download="KPS Chauhan_CV.pdf" target="_blank"
+          <a href="./assets/Cv/KPS Chauhan(Resume).pdf" download="KPS Chauhan(Resume).pdf" target="_blank"
             class="btn btn-outline-light mr-5">Download CV</a>
           <button type="button" class="btn-play" data-toggle="modal" data-src="" data-target="#videoModal">
             <span></span>
@@ -246,7 +253,7 @@
     </div>--><!-- End Counter Section -->
 
     <!-- ======= Published Games Section ======= -->
-    <section id="work" class="portfolio-mf sect-pt4 route">
+    <section id="PG" class="portfolio-mf sect-pt4 route">
       <div class="container">
         <div class="row">
           <div class="col-sm-12">
@@ -260,19 +267,23 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-10 (666).mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-10 (666).mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-10 (666).mp4" alt="" class="" /> -->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-10 (666).mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
                     <h2 class="w-title">TripleSix</h2>
                     <div class="w-more">
                       <span class="w-ctegory">PC Game</span>
-                    </div>
+                    </div><br>
+                    <a href="https://store.epicgames.com/en-US/p/triplesix-256053" target="_blank"
+                      class="btn btn-outline-light mr-5">Download Link</a>
                   </div>
                   <div class="col-sm-4">
                     <div class="w-like">
@@ -285,6 +296,37 @@
             </div>
           </div>
 
+
+          <div class="col-md-4">
+            <div class="work-box">
+             <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/portfolio/work-11(Teaser_PP).mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
+                </div>
+              </div>
+              <div class="work-content">
+                <div class="row">
+                  <div class="col-sm-8">
+                    <h2 class="w-title">Parkour Pulse</h2>
+                    <div class="w-more">
+                      <span class="w-ctegory">PC Game</span>
+                    </div><br>
+                    <a href="https://store.steampowered.com/app/3720790/Parkour_Pulse/" target="_blank"
+                      class="btn btn-outline-light mr-5">Download Link</a>
+                  </div>
+                  <div class="col-sm-4">
+                    <div class="w-like">
+                      <a href="portfolio-details-11.html">
+                        <span class="bi bi-plus-circle"></span></a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
           
         </div>
       </div>
@@ -308,12 +350,14 @@
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-7.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-7.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-1.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-7.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -337,12 +381,14 @@
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-1.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-1.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-1.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-1.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -363,12 +409,14 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-2.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-2.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-2.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-2.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -389,12 +437,14 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-3.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-3.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-3.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-3.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -415,12 +465,14 @@
           </div>
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-4.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-4.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-4.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-4.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -441,12 +493,14 @@
           </div>
           <div class="col-md-4">
             <div class="work-box ">
-              <a href="assets/img/work-5.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-5.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-5.jpg" alt="" class="img-fluid">-->
+             <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-5.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -487,14 +541,14 @@
         <div class="row">
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-8 Traversal Parkour system.mp4" data-gallery="portfolioGallery"
-                class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-8 Traversal Parkour system.mp4"
-                    type="video/mp4"></video>
-                  <!--<img src="assets/img/work-6.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-8 Traversal Parkour system.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -519,14 +573,14 @@
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-9 ALS.mp4" data-gallery="portfolioGallery"
-                class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-9 ALS.mp4"
-                    type="video/mp4"></video>
-                  <!--<img src="assets/img/work-6.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-9 ALS.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -552,12 +606,14 @@
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/work-6.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/work-6.mp4" type="video/mp4"></video>
-                  <!--<img src="assets/img/work-6.jpg" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/work-6.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -625,12 +681,14 @@
 
           <div class="col-md-4">
             <div class="work-box">
-              <a href="assets/img/extra/work-4.mp4" data-gallery="portfolioGallery" class="portfolio-lightbox">
-                <div class="work-img">
-                  <video width="400" controls src="assets/img/extra/work-4.mp4" type="video/mp4" ></video>
-                  <!--<img src="assets/img/work-4.mp4" alt="" class="img-fluid">-->
+              <div class="work-img">
+                <video class="hover-video" muted loop preload="metadata">
+                  <source src="assets/img/extra/work-4.mp4" type="video/mp4">
+                </video>
+                <div class="video-overlay">
+                  <span class="play-text">▶ Preview</span>
                 </div>
-              </a>
+              </div>
               <div class="work-content">
                 <div class="row">
                   <div class="col-sm-8">
@@ -895,18 +953,15 @@
                       <h5 class="title-left">About me</h5>
                     </div>
                     <p class="lead">
-                      Hi i'm khevendra, a game programmer from U.P. Here you
-                      can see my projects
+                      Passionate Unreal Engine Game Developer with hands-on experience building and shipping games using Unreal Engine 5.4. 
                     </p>
                     <p class="lead">
-                      I have a strong perseverance for learning new things and
-                      taking on challenges, and i alwyas like to put some
-                      extra time in polishing my creation to make sure the
-                      creative vision is achived in the best possible way.
+                      Skilled in developing gameplay systems, traversal mechanics, and animation integration using Blueprints and C++. 
+                      Experienced with Advanced Locomotion System (ALS), motion warping, animation systems, and gameplay mechanics for immersive gameplay.
                     </p>
                     <p class="lead">
-                      I like to play Open World Games and sometime i create a
-                      Open World Level.
+                      Successfully contributed to the release of commercial PC games and worked with Steamworks, Epic Developer Portal, and Git-based version control. 
+                      Strong problem-solving skills with a focus on performance optimization, gameplay programming, and system integration.
                     </p>
                   </div>
                 </div>
