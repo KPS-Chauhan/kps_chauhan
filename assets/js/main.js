@@ -233,3 +233,69 @@
   new PureCounter();
 
 })()
+
+const videos = document.querySelectorAll(".hover-video");
+
+// OBSERVER (play only when visible)
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    const video = entry.target;
+
+    if (entry.isIntersecting) {
+      video.dataset.visible = "true";
+    } else {
+      video.pause();
+      video.currentTime = 0;
+      video.dataset.visible = "false";
+    }
+  });
+}, { threshold: 0.6 });
+
+// MODAL
+const modal = document.getElementById("video-modal");
+const modalVideo = document.getElementById("modal-video");
+const closeBtn = document.querySelector(".close-video");
+
+videos.forEach(video => {
+  observer.observe(video);
+
+  const container = video.closest(".work-img");
+
+  // HOVER PLAY
+  container.addEventListener("mouseenter", () => {
+    if (video.dataset.visible === "true") {
+      video.play();
+    }
+  });
+
+  container.addEventListener("mouseleave", () => {
+    video.pause();
+    video.currentTime = 0;
+  });
+
+  // CLICK → FULLSCREEN
+  video.addEventListener("click", () => {
+    modal.style.display = "flex";
+    modalVideo.src = video.querySelector("source").src;
+    modalVideo.play();
+  });
+});
+
+// CLOSE MODAL
+closeBtn.addEventListener("click", () => {
+  modal.style.display = "none";
+  modalVideo.pause();
+  modalVideo.src = "";
+});
+
+const cards = document.querySelectorAll(".work-box");
+
+const cardObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add("visible");
+    }
+  });
+}, { threshold: 0.2 });
+
+cards.forEach(card => cardObserver.observe(card));
