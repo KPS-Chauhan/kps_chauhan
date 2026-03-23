@@ -1,243 +1,158 @@
-/**
-* Template Name: DevFolio
-* Updated: Jan 29 2024 with Bootstrap v5.3.2
-* Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-* Author: BootstrapMade.com
-* License: https://bootstrapmade.com/license/
-*/
-(function() {
-  "use strict";
+"use strict";
 
-  /**
-   * Easy selector helper function
-   */
+(function () {
+
   const select = (el, all = false) => {
-    el = el.trim()
-    if (all) {
-      return [...document.querySelectorAll(el)]
-    } else {
-      return document.querySelector(el)
-    }
-  }
+    el = el.trim();
+    return all ? [...document.querySelectorAll(el)] : document.querySelector(el);
+  };
 
-  /**
-   * Easy event listener function
-   */
   const on = (type, el, listener, all = false) => {
-    let selectEl = select(el, all)
-    if (selectEl) {
-      if (all) {
-        selectEl.forEach(e => e.addEventListener(type, listener))
-      } else {
-        selectEl.addEventListener(type, listener)
-      }
-    }
-  }
+    const elements = select(el, all);
+    if (!elements) return;
 
-  /**
-   * Easy on scroll event listener 
-   */
-  const onscroll = (el, listener) => {
-    el.addEventListener('scroll', listener)
-  }
+    if (all) elements.forEach(e => e.addEventListener(type, listener));
+    else elements.addEventListener(type, listener);
+  };
 
-  /**
-   * Navbar links active state on scroll
-   */
-  let navbarlinks = select('#navbar .scrollto', true)
+  const onscroll = (el, listener) => el.addEventListener("scroll", listener);
+
+  /* =========================
+     NAVBAR ACTIVE
+  ========================= */
+  let navbarlinks = select("#navbar .scrollto", true);
+
   const navbarlinksActive = () => {
-    let position = window.scrollY + 200
+    let position = window.scrollY + 200;
     navbarlinks.forEach(navbarlink => {
-      if (!navbarlink.hash) return
-      let section = select(navbarlink.hash)
-      if (!section) return
-      if (position >= section.offsetTop && position <= (section.offsetTop + section.offsetHeight)) {
-        navbarlink.classList.add('active')
+      if (!navbarlink.hash) return;
+      let section = select(navbarlink.hash);
+      if (!section) return;
+
+      if (position >= section.offsetTop &&
+        position <= (section.offsetTop + section.offsetHeight)) {
+        navbarlink.classList.add("active");
       } else {
-        navbarlink.classList.remove('active')
+        navbarlink.classList.remove("active");
       }
-    })
-  }
-  window.addEventListener('load', navbarlinksActive)
-  onscroll(document, navbarlinksActive)
+    });
+  };
 
-  /**
-   * Scrolls to an element with header offset
-   */
+  window.addEventListener("load", navbarlinksActive);
+  onscroll(document, navbarlinksActive);
+
+  /* =========================
+     SMOOTH SCROLL
+  ========================= */
   const scrollto = (el) => {
-    let header = select('#header')
-    let offset = header.offsetHeight
+    let header = select("#header");
+    let offset = header.offsetHeight;
 
-    if (!header.classList.contains('header-scrolled')) {
-      offset -= 16
+    if (!header.classList.contains("header-scrolled")) {
+      offset -= 16;
     }
 
-    let elementPos = select(el).offsetTop
+    let elementPos = select(el).offsetTop;
+
     window.scrollTo({
       top: elementPos - offset,
-      behavior: 'smooth'
-    })
-  }
+      behavior: "smooth"
+    });
+  };
 
-  /**
-   * Toggle .header-scrolled class to #header when page is scrolled
-   */
-  let selectHeader = select('#header')
-  if (selectHeader) {
-    const headerScrolled = () => {
-      if (window.scrollY > 100) {
-        selectHeader.classList.add('header-scrolled')
-      } else {
-        selectHeader.classList.remove('header-scrolled')
-      }
-    }
-    window.addEventListener('load', headerScrolled)
-    onscroll(document, headerScrolled)
-  }
+  /* =========================
+     HEADER SCROLL EFFECT
+  ========================= */
+  let header = select("#header");
 
-  /**
-   * Back to top button
-   */
-  let backtotop = select('.back-to-top')
-  if (backtotop) {
-    const toggleBacktotop = () => {
-      if (window.scrollY > 100) {
-        backtotop.classList.add('active')
-      } else {
-        backtotop.classList.remove('active')
-      }
-    }
-    window.addEventListener('load', toggleBacktotop)
-    onscroll(document, toggleBacktotop)
-  }
+  const headerScrolled = () => {
+    window.scrollY > 100
+      ? header.classList.add("header-scrolled")
+      : header.classList.remove("header-scrolled");
+  };
 
-  /**
-   * Mobile nav toggle
-   */
-  on('click', '.mobile-nav-toggle', function(e) {
-    select('#navbar').classList.toggle('navbar-mobile')
-    this.classList.toggle('bi-list')
-    this.classList.toggle('bi-x')
-  })
+  window.addEventListener("load", headerScrolled);
+  onscroll(document, headerScrolled);
 
-  /**
-   * Mobile nav dropdowns activate
-   */
-  on('click', '.navbar .dropdown > a', function(e) {
-    if (select('#navbar').classList.contains('navbar-mobile')) {
-      e.preventDefault()
-      this.nextElementSibling.classList.toggle('dropdown-active')
-    }
-  }, true)
+  /* =========================
+     BACK TO TOP
+  ========================= */
+  let backtotop = select(".back-to-top");
 
-  /**
-   * Scrool with ofset on links with a class name .scrollto
-   */
-  on('click', '.scrollto', function(e) {
-    if (select(this.hash)) {
-      e.preventDefault()
+  const toggleBacktotop = () => {
+    window.scrollY > 100
+      ? backtotop.classList.add("active")
+      : backtotop.classList.remove("active");
+  };
 
-      let navbar = select('#navbar')
-      if (navbar.classList.contains('navbar-mobile')) {
-        navbar.classList.remove('navbar-mobile')
-        let navbarToggle = select('.mobile-nav-toggle')
-        navbarToggle.classList.toggle('bi-list')
-        navbarToggle.classList.toggle('bi-x')
-      }
-      scrollto(this.hash)
-    }
-  }, true)
+  window.addEventListener("load", toggleBacktotop);
+  onscroll(document, toggleBacktotop);
 
-  /**
-   * Scroll with ofset on page load with hash links in the url
-   */
-  window.addEventListener('load', () => {
-    if (window.location.hash) {
-      if (select(window.location.hash)) {
-        scrollto(window.location.hash)
-      }
-    }
+  /* =========================
+     MOBILE NAV
+  ========================= */
+  on("click", ".mobile-nav-toggle", function () {
+    select("#navbar").classList.toggle("navbar-mobile");
+    this.classList.toggle("bi-list");
+    this.classList.toggle("bi-x");
   });
 
-  /**
-   * Intro type effect
-   */
-  const typed = select('.typed')
+  on("click", ".scrollto", function (e) {
+    if (select(this.hash)) {
+      e.preventDefault();
+      let navbar = select("#navbar");
+
+      if (navbar.classList.contains("navbar-mobile")) {
+        navbar.classList.remove("navbar-mobile");
+        select(".mobile-nav-toggle").classList.toggle("bi-list");
+        select(".mobile-nav-toggle").classList.toggle("bi-x");
+      }
+
+      scrollto(this.hash);
+    }
+  }, true);
+
+  /* =========================
+     TYPING EFFECT
+  ========================= */
+  const typed = select(".typed");
   if (typed) {
-    let typed_strings = typed.getAttribute('data-typed-items')
-    typed_strings = typed_strings.split(',')
-    new Typed('.typed', {
-      strings: typed_strings,
+    let items = typed.getAttribute("data-typed-items").split(",");
+    new Typed(".typed", {
+      strings: items,
       loop: true,
-      typeSpeed: 100,
-      backSpeed: 50,
+      typeSpeed: 90,
+      backSpeed: 40,
       backDelay: 2000
     });
   }
 
-  /**
-   * Initiate portfolio lightbox 
-   */
-  const portfolioLightbox = GLightbox({
-    selector: '.portfolio-lightbox'
-  });
-
-  /**
-   * Testimonials slider
-   */
-  new Swiper('.testimonials-slider', {
-    speed: 600,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    slidesPerView: 'auto',
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Portfolio details slider
-   */
-  new Swiper('.portfolio-details-slider', {
-    speed: 400,
-    loop: true,
-    autoplay: {
-      delay: 5000,
-      disableOnInteraction: false
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      type: 'bullets',
-      clickable: true
-    }
-  });
-
-  /**
-   * Preloader
-   */
-  let preloader = select('#preloader');
+  /* =========================
+     PRELOADER
+  ========================= */
+  let preloader = select("#preloader");
   if (preloader) {
-    window.addEventListener('load', () => {
-      preloader.remove()
-    });
+    window.addEventListener("load", () => preloader.remove());
   }
 
-  /**
-   * Initiate Pure Counter 
-   */
+  /* =========================
+     PURE COUNTER
+  ========================= */
   new PureCounter();
 
-})()
+})();
+
+/* =========================
+   🎮 VIDEO SYSTEM (UPGRADED)
+========================= */
 
 const videos = document.querySelectorAll(".hover-video");
+const modal = document.getElementById("video-modal");
+const modalVideo = document.getElementById("modal-video");
+const closeBtn = document.querySelector(".close-video");
 
-// OBSERVER (play only when visible)
-const observer = new IntersectionObserver((entries) => {
+/* VISIBILITY */
+const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     const video = entry.target;
 
@@ -251,21 +166,14 @@ const observer = new IntersectionObserver((entries) => {
   });
 }, { threshold: 0.6 });
 
-// MODAL
-const modal = document.getElementById("video-modal");
-const modalVideo = document.getElementById("modal-video");
-const closeBtn = document.querySelector(".close-video");
-
 videos.forEach(video => {
   observer.observe(video);
 
   const container = video.closest(".work-img");
 
-  // HOVER PLAY
+  /* HOVER PLAY */
   container.addEventListener("mouseenter", () => {
-    if (video.dataset.visible === "true") {
-      video.play();
-    }
+    if (video.dataset.visible === "true") video.play();
   });
 
   container.addEventListener("mouseleave", () => {
@@ -273,7 +181,7 @@ videos.forEach(video => {
     video.currentTime = 0;
   });
 
-  // CLICK → FULLSCREEN
+  /* CLICK MODAL */
   video.addEventListener("click", () => {
     modal.style.display = "flex";
     modalVideo.src = video.querySelector("source").src;
@@ -281,16 +189,19 @@ videos.forEach(video => {
   });
 });
 
-// CLOSE MODAL
+/* CLOSE MODAL */
 closeBtn.addEventListener("click", () => {
   modal.style.display = "none";
   modalVideo.pause();
   modalVideo.src = "";
 });
 
+/* =========================
+   ⚡ CARD ANIMATION
+========================= */
 const cards = document.querySelectorAll(".work-box");
 
-const cardObserver = new IntersectionObserver((entries) => {
+const cardObserver = new IntersectionObserver(entries => {
   entries.forEach(entry => {
     if (entry.isIntersecting) {
       entry.target.classList.add("visible");
@@ -299,3 +210,167 @@ const cardObserver = new IntersectionObserver((entries) => {
 }, { threshold: 0.2 });
 
 cards.forEach(card => cardObserver.observe(card));
+
+/* =========================
+   🖱️ CUSTOM CURSOR
+========================= */
+/* =========================
+🎮 AAA CURSOR SYSTEM (GLOBAL)
+========================= */
+
+const cursor = document.querySelector(".custom-cursor");
+
+if (cursor) {
+let mouseX = 0;
+let mouseY = 0;
+let currentX = 0;
+let currentY = 0;
+
+document.addEventListener("mousemove", (e) => {
+mouseX = e.clientX;
+mouseY = e.clientY;
+});
+
+function animateCursor() {
+currentX += (mouseX - currentX) * 0.15;
+currentY += (mouseY - currentY) * 0.15;
+
+
+cursor.style.transform = `translate(${currentX}px, ${currentY}px)`;
+
+requestAnimationFrame(animateCursor);
+
+
+}
+
+animateCursor();
+
+/* HOVER SCALE */
+document.querySelectorAll("a, button, .work-box, video").forEach(el => {
+el.addEventListener("mouseenter", () => {
+cursor.style.transform += " scale(1.8)";
+});
+
+```
+el.addEventListener("mouseleave", () => {
+  cursor.style.transform = cursor.style.transform.replace(" scale(1.8)", "");
+});
+```
+
+});
+}
+
+/* =========================
+🔊 HOVER SOUND
+========================= */
+
+const hoverSound = document.getElementById("hover-sound");
+
+if (hoverSound) {
+document.querySelectorAll("a, .work-box, video").forEach(el => {
+el.addEventListener("mouseenter", () => {
+hoverSound.currentTime = 0;
+hoverSound.play().catch(() => {});
+});
+});
+}
+
+/* =========================
+🎬 VIDEO INTERACTION (DETAIL PAGE)
+========================= */
+
+document.querySelectorAll(".showcase-video").forEach(video => {
+video.addEventListener("mouseenter", () => {
+video.play().catch(() => {});
+});
+
+video.addEventListener("mouseleave", () => {
+video.pause();
+});
+});
+
+/* =========================
+🧠 SMOOTH SCROLL (KEEP NAV SAME)
+========================= */
+
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+anchor.addEventListener("click", function (e) {
+const target = document.querySelector(this.getAttribute("href"));
+if (target) {
+e.preventDefault();
+target.scrollIntoView({ behavior: "smooth" });
+}
+});
+});
+
+
+
+/* =========================
+   🎮 HERO PARALLAX EFFECT
+========================= */
+const hero = document.querySelector(".hero");
+const heroVideo = document.querySelector(".hero-video");
+
+document.addEventListener("mousemove", (e) => {
+  let x = (e.clientX / window.innerWidth - 0.5) * 20;
+  let y = (e.clientY / window.innerHeight - 0.5) * 20;
+
+  if (hero) {
+    hero.style.transform = `translate(${x}px, ${y}px)`;
+  }
+
+  if (heroVideo) {
+    heroVideo.style.transform = `scale(1.1) translate(${x * 0.5}px, ${y * 0.5}px)`;
+  }
+});
+
+/* =========================
+   ⚡ GLITCH RANDOM BOOST
+========================= */
+setInterval(() => {
+  const title = document.querySelector(".hero-title");
+  if (title) {
+    title.style.animation = "none";
+    setTimeout(() => {
+      title.style.animation = "glitch 0.3s";
+    }, 50);
+  }
+}, 3000);
+
+/* =========================
+   🧠 SYSTEM BLOCK ANIMATION
+========================= */
+
+const blocks = document.querySelectorAll(".system-block");
+
+const blockObserver = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.style.opacity = "1";
+      entry.target.style.transform = "translateY(0)";
+    }
+  });
+}, { threshold: 0.2 });
+
+blocks.forEach(block => {
+  block.style.opacity = "0";
+  block.style.transform = "translateY(40px)";
+  block.style.transition = "0.6s ease";
+  blockObserver.observe(block);
+});
+
+/* =========================
+   💥 CLICK IMPACT FX
+========================= */
+document.querySelectorAll(".work-box").forEach(card => {
+  card.addEventListener("click", (e) => {
+    const ripple = document.createElement("span");
+    ripple.className = "click-ripple";
+    ripple.style.left = e.offsetX + "px";
+    ripple.style.top = e.offsetY + "px";
+    card.appendChild(ripple);
+
+    setTimeout(() => ripple.remove(), 600);
+  });
+});
+
