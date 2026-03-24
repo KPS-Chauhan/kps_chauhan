@@ -1,172 +1,225 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPS Chauhan</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <!-- Favicons -->
+
   <link href="assets/img/favicon1.png" rel="icon">
   <link href="assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS -->
+
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- 🔥 OVERRIDES (IMPORTANT) -->
+
+  <style>
+    body { cursor: none; }
+
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #ff0040;
+      background: rgba(255,0,64,0.2);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 2147483647;
+      box-shadow: 0 0 12px rgba(255,0,64,0.9),
+                  0 0 30px rgba(255,0,64,0.6);
+    }
+
+    .overlay-mf,
+    .hero::before,
+    .hero::after {
+      pointer-events: none;
+    }
+
+    .portfolio-details {
+      background: radial-gradient(circle at center, rgba(255,0,64,0.08), transparent);
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+<!-- CURSOR -->
 
-      <h1 class="logo"><a href="index.html">DevFolio</a></h1>
-      <h5 class="link642"><a href="https://www.linkedin.com/in/khevendra-paul-singh-chauhan-3748a61a1">Linked In</a></h5>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<div class="custom-cursor"></div>
+<audio id="hover-sound" src="assets/sounds/hover.mp3"></audio>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          
-          
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+<!-- HEADER -->
 
-    </div>
-  </header><!-- End Header -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="index.html">KPS Chauhan</a></h1>
+    <h5><a href="https://www.linkedin.com/">Linked In</a></h5>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h2 class="hero-title mb-4">Portfolio Details</h2>
-          <ol class="breadcrumb d-flex justify-content-center">
-            <li class="breadcrumb-item">
-              <a href="#">Games</a>
-            </li>
-            <li class="breadcrumb-item active">Mechanism</li>
-          </ol>
-        </div>
+<!-- HERO -->
+
+<div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+  <div class="overlay-mf"></div>
+  <div class="hero-content display-table">
+    <div class="table-cell">
+      <div class="container text-center">
+        <h2 class="hero-title">Action Open World</h2>
       </div>
     </div>
   </div>
+</div>
 
-  <main id="main">
+<main id="main">
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+<section class="portfolio-details sect-pt4">
+  <div class="container">
 
-        <div class="row gy-4">
 
-          <div class="col-lg-8">
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+<div class="row gy-4">
 
-                <div class="swiper-slide">
-                  <video width="650" controls
-                  src="assets/img/work-4.mp4" type="video/mp4" >
-                </video>
-                  <!--<img src="assets/img/portfolio-details-1.jpg" alt="">-->
-                </div>
+  <!-- VIDEO -->
+  <div class="col-lg-8">
+    <video class="showcase-video" controls src="assets/img/work-4.mp4"></video>
+  </div>
 
-                <!--<div class="swiper-slide">
-                  <img src="assets/img/portfolio-details-2.jpg" alt="">
-                </div>
+  <!-- INFO -->
+  <div class="col-lg-4">
 
-                <div class="swiper-slide">
-                  <img src="assets/img/portfolio-details-3.jpg" alt="">
-                </div>-->
+<div class="portfolio-description glass-panel">
+  <h2>Description</h2>
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
+  <p>
+    <strong>Grapple Mechanism</strong> is a gameplay system developed in Unreal Engine using Blueprints, focused on implementing dynamic player movement through grappling mechanics.
+  </p>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Build</strong>: Unreal Engine</li>
-                <li><strong>Using</strong>: Blueprint's</li>
-                <li><strong>Game/Mechanism</strong>: Mechanism</li>
-                <li><strong>Project </strong>: <a href="#">Grapple Mechanism</a></li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>Description : </h2>
-              <p>
-                 Grapple Mechanism Created using Unreal Engine BluePrints.
-              </p>
-            </div>
-          </div>
+  <p>
+    The system allows the player to target surfaces in the environment and rapidly move toward them, creating a fast and responsive traversal experience. It demonstrates how <strong>physics-based movement, tracing systems, and player input</strong> can be combined to build engaging gameplay mechanics.
+  </p>
 
-        </div>
+  <p>
+    Developed as a learning-focused project, it highlights an understanding of <strong>real-time movement logic, trajectory calculation, and interaction with the environment</strong>.
+  </p>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+  <div class="system-block">
+    <h3>Key Features</h3>
+    <ul>
+      <li>🪝 Grappling hook movement system</li>
+      <li>🎯 Target detection using line traces</li>
+      <li>⚡ Fast player movement toward target points</li>
+      <li>🧠 Direction and distance-based movement control</li>
+      <li>🎮 Responsive input-driven activation</li>
+      <li>🌍 Environment interaction system</li>
+    </ul>
+  </div>
 
-  </main><!-- End #main -->
+  <div class="system-block">
+    <h3>System Flow</h3>
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-             
-            </div>
-          </div>
-        </div>
-      </div>
+    <p>🎮 Input</p>
+    <ul>
+      <li>Player input triggers grapple action</li>
+    </ul>
+
+    <p>⚙️ Core Logic</p>
+    <ul>
+      <li>Line trace used to detect valid grapple target</li>
+      <li>Hit location used as movement destination</li>
+      <li>Vector calculation for direction and velocity</li>
+      <li>Player movement adjusted toward target point</li>
+    </ul>
+
+    <p>🔄 Gameplay Flow</p>
+    <ul>
+      <li>Aim → Detect Target → Grapple Trigger → Move to Target → Reset</li>
+    </ul>
+  </div>
+
+  <div class="system-block">
+    <h3>Technical Highlights</h3>
+    <ul>
+      <li>Use of vector math for trajectory and direction</li>
+      <li>Real-time trace-based environment detection</li>
+      <li>Integration with character movement system</li>
+      <li>Clean Blueprint-based implementation</li>
+    </ul>
+  </div>
+
+  <div class="system-block">
+    <h3>Tech</h3>
+    <div class="tech-tags">
+      <span>Unreal Engine 5</span>
+      <span>Blueprints</span>
+      <span>Line Tracing</span>
+      <span>Vector Mathematics</span>
+      <span>Gameplay Mechanics</span>
     </div>
-  </footer><!-- End  Footer -->
+  </div>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</div>
+</section>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+</main>
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+<!-- FOOTER -->
+
+<footer>
+  <div class="container text-center">
+    <p>KPS Chauhan</p>
+  </div>
+</footer>
+
+<!-- Vendor JS -->
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- 🔥 CURSOR SCRIPT -->
+
+<script>
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll("a, video").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(1.8)";
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(1)";
+  });
+});
+</script>
 
 </body>
-
 </html>
+
+
+

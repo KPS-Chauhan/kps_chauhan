@@ -1,176 +1,213 @@
 <!DOCTYPE html>
+
 <html lang="en">
 
 <head>
   <meta charset="utf-8">
-  <meta content="width=device-width, initial-scale=1.0" name="viewport">
-
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>KPS Chauhan</title>
-  <meta content="" name="description">
-  <meta content="" name="keywords">
 
   <!-- Favicons -->
+
   <link href="assets/img/favicon1.png" rel="icon">
   <link href="assets/img/apple-touch-icon1.png" rel="apple-touch-icon">
 
-  <!-- Vendor CSS Files -->
+  <!-- Vendor CSS -->
+
   <link href="assets/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
   <link href="assets/vendor/bootstrap-icons/bootstrap-icons.css" rel="stylesheet">
   <link href="assets/vendor/glightbox/css/glightbox.min.css" rel="stylesheet">
   <link href="assets/vendor/swiper/swiper-bundle.min.css" rel="stylesheet">
 
-  <!-- Template Main CSS File -->
+  <!-- Main CSS -->
+
   <link href="assets/css/style.css" rel="stylesheet">
 
-  <!-- =======================================================
-  * Template Name: DevFolio
-  * Updated: Jan 29 2024 with Bootstrap v5.3.2
-  * Template URL: https://bootstrapmade.com/devfolio-bootstrap-portfolio-html-template/
-  * Author: BootstrapMade.com
-  * License: https://bootstrapmade.com/license/
-  ======================================================== -->
+  <!-- 🔥 OVERRIDES (IMPORTANT) -->
+
+  <style>
+    body { cursor: none; }
+
+    .custom-cursor {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 18px;
+      height: 18px;
+      border-radius: 50%;
+      border: 2px solid #ff0040;
+      background: rgba(255,0,64,0.2);
+      transform: translate(-50%, -50%);
+      pointer-events: none;
+      z-index: 2147483647;
+      box-shadow: 0 0 12px rgba(255,0,64,0.9),
+                  0 0 30px rgba(255,0,64,0.6);
+    }
+
+    .overlay-mf,
+    .hero::before,
+    .hero::after {
+      pointer-events: none;
+    }
+
+    .portfolio-details {
+      background: radial-gradient(circle at center, rgba(255,0,64,0.08), transparent);
+    }
+  </style>
+
 </head>
 
 <body>
 
-  <!-- ======= Header ======= -->
-  <header id="header" class="fixed-top">
-    <div class="container d-flex align-items-center justify-content-between">
+<!-- CURSOR -->
 
-      <h1 class="logo"><a href="index.html">DevFolio</a></h1>
-      <h5 class="link642"><a href="https://www.linkedin.com/in/khevendra-paul-singh-chauhan-3748a61a1">Linked In</a></h5>
-      <!-- Uncomment below if you prefer to use an image logo -->
-      <!-- <a href="index.html" class="logo"><img src="assets/img/logo.png" alt="" class="img-fluid"></a>-->
+<div class="custom-cursor"></div>
+<audio id="hover-sound" src="assets/sounds/hover.mp3"></audio>
 
-      <nav id="navbar" class="navbar">
-        <ul>
-          <li><a class="nav-link scrollto " href="#hero">Home</a></li>
-          
-          <li><a class="nav-link scrollto " href="#work">Work</a></li>
-          <li><a class="nav-link scrollto" href="#about">About</a></li>
-          
-          
-        </ul>
-        <i class="bi bi-list mobile-nav-toggle"></i>
-      </nav><!-- .navbar -->
+<!-- HEADER -->
 
-    </div>
-  </header><!-- End Header -->
+<header id="header" class="fixed-top">
+  <div class="container d-flex align-items-center justify-content-between">
+    <h1 class="logo"><a href="index.html">KPS Chauhan</a></h1>
+    <h5><a href="https://www.linkedin.com/">Linked In</a></h5>
+    <nav class="navbar">
+      <ul>
+        <li><a href="index.html#hero">Home</a></li>
+        <li><a href="index.html#work">Work</a></li>
+        <li><a href="index.html#about">About</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
 
-  <div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
-    <div class="overlay-mf"></div>
-    <div class="hero-content display-table">
-      <div class="table-cell">
-        <div class="container">
-          <h2 class="hero-title mb-4">Portfolio Details</h2>
-          <ol class="breadcrumb d-flex justify-content-center">
-            <li class="breadcrumb-item">
-              <a href="#">Games</a>
-            </li>
-            <li class="breadcrumb-item active">Mechanism</li>
-          </ol>
-        </div>
+<!-- HERO -->
+
+<div class="hero hero-single route bg-image" style="background-image: url(assets/img/overlay-bg.jpg)">
+  <div class="overlay-mf"></div>
+  <div class="hero-content display-table">
+    <div class="table-cell">
+      <div class="container text-center">
+        <h2 class="hero-title">Runner</h2>
       </div>
     </div>
   </div>
+</div>
 
-  <main id="main">
+<main id="main">
 
-    <!-- ======= Portfolio Details Section ======= -->
-    <section id="portfolio-details" class="portfolio-details">
-      <div class="container">
+<section class="portfolio-details sect-pt4">
+  <div class="container">
 
-        <div class="row gy-4">
 
-          <div class="col-lg-8" >
-            <div class="portfolio-details-slider swiper">
-              <div class="swiper-wrapper align-items-center">
+<div class="row gy-4">
 
-                <div class="swiper-slide  hyper">
-                  <video width="800"  controls
-                  src="assets/img/work-1.mp4" type="video/mp4" >
-                </video>
-                  <!--<img src="assets/img/portfolio-details-1.jpg" alt="">-->
-                </div>
+  <!-- VIDEO -->
+  <div class="col-lg-8">
+    <video class="showcase-video" controls src="assets/img/work-1.mp4"></video>
+  </div>
 
-                <div class="swiper-slide  hyper">
-                  <img src="assets/img/portfolio/work-1.1.png" alt="">
-                </div>
+  <!-- INFO -->
+  <div class="col-lg-4">
 
-                <div class="swiper-slide  hyper">
-                  <img src="assets/img/portfolio/work-1.2.png" alt="">
-                </div>
+<div class="portfolio-description glass-panel">
+  <h2>Description</h2>
 
-                <div class="swiper-slide  hyper">
-                  <img src="assets/img/portfolio/work-1.3.png" alt="">
-                </div>
+  <p>
+    <strong>Runner</strong> is a hyper-casual mobile game developed using Unity and C#, focused on delivering quick, engaging gameplay through simple mechanics and responsive controls. The project was built within a short development cycle, emphasizing rapid prototyping and core gameplay design.
+  </p>
 
-              </div>
-              <div class="swiper-pagination"></div>
-            </div>
-          </div>
+  <p>
+    The gameplay revolves around <strong>continuous movement and obstacle avoidance</strong>, where the player must navigate through a dynamic path while collecting coins and avoiding obstacles. The experience is designed to be intuitive and fast-paced, aligning with hyper-casual design principles.
+  </p>
 
-          <div class="col-lg-4">
-            <div class="portfolio-info">
-              <h3>Project information</h3>
-              <ul>
-                <li><strong>Build</strong>: Unity Engine</li>
-                <li><strong>Using</strong>: C#</li>
-                <li><strong>Game/Mechanism</strong>: Game</li>
-                <li><strong>Project </strong>: HyperCasual Game</li>
-              </ul>
-            </div>
-            <div class="portfolio-description">
-              <h2>Description : </h2>
-              <p>
-                This is a HyperCasual Game for mobile created in Unity Engine by C# with in 2 Days, on clicking start player start running you have to avoid obsticles and collect, at the finish line max coin collection of players is counterd and your score will be shown.  
-              </p>
-            </div>
-          </div>
+  <p>
+    Developed as a compact project, the game demonstrates strong fundamentals in <strong>game loop design, input handling, and scoring systems</strong>, while maintaining performance and simplicity suitable for mobile platforms.
+  </p>
 
-        </div>
+  <div class="system-block">
+    <h3>Key Features</h3>
+    <ul>
+      <li>🎮 Simple one-touch / input-based control system</li>
+      <li>⚡ Fast-paced hyper-casual gameplay loop</li>
+      <li>🧩 Obstacle avoidance mechanics</li>
+      <li>💰 Coin collection and scoring system</li>
+      <li>📱 Mobile-optimized performance</li>
+      <li>🚀 Rapid development (built within 2 days)</li>
+    </ul>
+  </div>
 
-      </div>
-    </section><!-- End Portfolio Details Section -->
+  <div class="system-block">
+    <h3>System Flow</h3>
 
-  </main><!-- End #main -->
+    <p>🎮 Input</p>
+    <ul>
+      <li>Player input (tap / click) triggers movement</li>
+      <li>Continuous forward motion handled automatically</li>
+    </ul>
 
-  <!-- ======= Footer ======= -->
-  <footer>
-    <div class="container">
-      <div class="row">
-        <div class="col-sm-12">
-          <div class="copyright-box">
-            
-            <div class="credits">
-              <!--
-              All the links in the footer should remain intact.
-              You can delete the links only if you purchased the pro version.
-              Licensing information: https://bootstrapmade.com/license/
-              Purchase the pro version with working PHP/AJAX contact form: https://bootstrapmade.com/buy/?theme=DevFolio
-            -->
-             
-            </div>
-          </div>
-        </div>
-      </div>
+    <p>⚙️ Core Logic</p>
+    <ul>
+      <li>Obstacle spawning and collision detection</li>
+      <li>Coin collection system with score tracking</li>
+      <li>Game state management (start → play → end)</li>
+    </ul>
+
+    <p>🔄 Gameplay Flow</p>
+    <ul>
+      <li>Start Game → Player Movement → Avoid Obstacles → Collect Coins → Reach End → Score Display</li>
+    </ul>
+  </div>
+
+  <div class="system-block">
+    <h3>Tech</h3>
+    <div class="tech-tags">
+      <span>Unity Engine</span>
+      <span>C#</span>
+      <span>Mobile Game Development</span>
+      <span>Hypercasual Design</span>
     </div>
-  </footer><!-- End  Footer -->
+  </div>
+  </div>
+</section>
 
-  <div id="preloader"></div>
-  <a href="#" class="back-to-top d-flex align-items-center justify-content-center"><i class="bi bi-arrow-up-short"></i></a>
+</main>
 
-  <!-- Vendor JS Files -->
-  <script src="assets/vendor/purecounter/purecounter_vanilla.js"></script>
-  <script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="assets/vendor/glightbox/js/glightbox.min.js"></script>
-  <script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
-  <script src="assets/vendor/typed.js/typed.umd.js"></script>
-  <script src="assets/vendor/php-email-form/validate.js"></script>
+<!-- FOOTER -->
 
-  <!-- Template Main JS File -->
-  <script src="assets/js/main.js"></script>
+<footer>
+  <div class="container text-center">
+    <p>KPS Chauhan</p>
+  </div>
+</footer>
+
+<!-- Vendor JS -->
+
+<script src="assets/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+
+<script src="assets/vendor/swiper/swiper-bundle.min.js"></script>
+
+<!-- 🔥 CURSOR SCRIPT -->
+
+<script>
+const cursor = document.querySelector(".custom-cursor");
+
+document.addEventListener("mousemove", (e) => {
+  cursor.style.left = e.clientX + "px";
+  cursor.style.top = e.clientY + "px";
+});
+
+document.querySelectorAll("a, video").forEach(el => {
+  el.addEventListener("mouseenter", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(1.8)";
+  });
+  el.addEventListener("mouseleave", () => {
+    cursor.style.transform = "translate(-50%, -50%) scale(1)";
+  });
+});
+</script>
 
 </body>
-
 </html>
+
+
+

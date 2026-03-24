@@ -1991,11 +1991,14 @@ footer .credits a {
   border-radius: 15px;
   padding: 20px;
   box-shadow: 0 0 20px rgba(255,0,60,0.2);
+  
 }
 
 /* VIDEO */
-.showcase-video {
+.showcase-video{
   width: 100%;
+  aspect-ratio: 16 / 9;   /* 🔥 fixes height automatically */
+  object-fit: cover;      /* prevents stretching */
   border-radius: 15px;
   border: 2px solid rgba(255,0,60,0.3);
   box-shadow: 0 0 20px rgba(255,0,60,0.4);
@@ -2140,4 +2143,3 @@ footer .credits a {
   color: #ff4d6d;
   font-size: 12px;
 }
-
