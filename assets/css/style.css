@@ -1721,9 +1721,13 @@ footer .credits a {
 
 /* Utility */
 .portfolio-description {
-  max-height: 350px;
+  height: 580px;
+  max-height: 580px;
   overflow-y: auto;
-  padding-right: 10px;
+  overflow-x: hidden;
+  padding-right: 14px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 0, 64, 0.65) transparent;
 }
 
 .work-img::after {
@@ -2143,3 +2147,191 @@ footer .credits a {
   color: #ff4d6d;
   font-size: 12px;
 }
+
+/* ==========================================================
+   PORTFOLIO DESCRIPTION PANELS — FINAL OVERRIDE
+   Applied to all project detail description panels
+   ========================================================== */
+
+.portfolio-details .portfolio-description {
+  height: 580px;
+  max-height: 580px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  padding: 25px 14px 25px 25px;
+  scrollbar-width: thin;
+  scrollbar-color: rgba(255, 0, 64, 0.65) transparent;
+}
+
+.portfolio-details .portfolio-description::-webkit-scrollbar {
+  width: 6px;
+}
+
+.portfolio-details .portfolio-description::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
+  border-radius: 10px;
+}
+
+.portfolio-details .portfolio-description::-webkit-scrollbar-thumb {
+  background: rgba(255, 0, 64, 0.65);
+  border-radius: 10px;
+  box-shadow: 0 0 8px rgba(255, 0, 64, 0.35);
+}
+
+.portfolio-details .portfolio-description::-webkit-scrollbar-thumb:hover {
+  background: var(--red);
+  box-shadow: 0 0 12px rgba(255, 0, 64, 0.65);
+}
+
+/* Keep the project video aligned with the description panel on desktop */
+.portfolio-details .showcase-video {
+  width: 100%;
+  height: 580px;
+  aspect-ratio: auto;
+  object-fit: cover;
+}
+
+/* Description typography */
+.portfolio-details .portfolio-description h2 {
+  color: #fff;
+  font-size: 26px;
+  font-weight: 800;
+  margin-top: 0;
+  margin-bottom: 20px;
+  text-shadow: 0 0 10px #ff003c;
+}
+
+.portfolio-details .portfolio-description h3 {
+  color: #fff;
+  font-size: 20px;
+  font-weight: 700;
+  margin-top: 0;
+  margin-bottom: 14px;
+  text-shadow: 0 0 8px rgba(255, 0, 60, 0.35);
+}
+
+.portfolio-details .portfolio-description p {
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.portfolio-details .portfolio-description strong {
+  color: #fff;
+}
+
+/* System blocks used by project detail pages */
+.portfolio-details .portfolio-description .system-block {
+  margin-top: 22px;
+  padding: 20px;
+  border-radius: 12px;
+  background: rgba(10, 10, 20, 0.80);
+  border: 1px solid rgba(255, 0, 60, 0.20);
+  box-shadow: 0 0 15px rgba(255, 0, 60, 0.12);
+  transition: 0.3s;
+}
+
+.portfolio-details .portfolio-description .system-block:hover {
+  transform: translateY(-3px);
+  border-color: rgba(255, 0, 60, 0.42);
+  box-shadow: 0 0 25px rgba(255, 0, 60, 0.25);
+}
+
+.portfolio-details .portfolio-description .system-block ul {
+  padding-left: 20px;
+  margin-bottom: 0;
+}
+
+.portfolio-details .portfolio-description .system-block li {
+  color: #ccc;
+  line-height: 1.6;
+  margin-bottom: 8px;
+}
+
+.portfolio-details .portfolio-description .system-block li:last-child {
+  margin-bottom: 0;
+}
+
+/* Network/system flow */
+.portfolio-details .portfolio-description .network-flow {
+  margin-top: 15px;
+  padding: 14px 16px;
+  border-radius: 10px;
+  background: rgba(0, 0, 0, 0.20);
+  border: 1px solid rgba(255, 255, 255, 0.07);
+  color: var(--muted);
+  font-size: 13px;
+  line-height: 1.7;
+}
+
+.portfolio-details .portfolio-description .flow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 8px;
+  margin-top: 12px;
+}
+
+.portfolio-details .portfolio-description .flow span {
+  padding: 6px 11px;
+  border-radius: 8px;
+  background: rgba(255, 0, 60, 0.08);
+  border: 1px solid rgba(255, 0, 60, 0.25);
+  color: #fff;
+  font-size: 13px;
+}
+
+.portfolio-details .portfolio-description .flow .flow-arrow {
+  padding: 0;
+  border: 0;
+  background: transparent;
+  color: var(--red);
+  font-size: 18px;
+}
+
+/* Technology tags */
+.portfolio-details .portfolio-description .tech-tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.portfolio-details .portfolio-description .tech-tags span {
+  display: inline-block;
+  margin: 0;
+  padding: 7px 12px;
+  border-radius: 20px;
+  background: rgba(255, 0, 60, 0.10);
+  border: 1px solid rgba(255, 0, 60, 0.30);
+  color: #ff4d6d;
+  font-size: 12px;
+  box-shadow: 0 0 10px rgba(255, 0, 60, 0.12);
+}
+
+/* Tablet */
+@media (max-width: 991.98px) {
+  .portfolio-details .portfolio-description {
+    height: 520px;
+    max-height: 520px;
+  }
+
+  .portfolio-details .showcase-video {
+    height: 520px;
+  }
+}
+
+/* Mobile: don't trap the entire page inside a small scroll box */
+@media (max-width: 767.98px) {
+  .portfolio-details .portfolio-description {
+    height: auto;
+    max-height: none;
+    overflow-y: visible;
+    padding: 20px;
+  }
+
+  .portfolio-details .showcase-video {
+    height: auto;
+    aspect-ratio: 16 / 9;
+    object-fit: cover;
+  }
+}
+
